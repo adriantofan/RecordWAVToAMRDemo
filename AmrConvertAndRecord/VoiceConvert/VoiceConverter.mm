@@ -17,7 +17,7 @@
 
 + (int)amrToWav:(NSString*)_amrPath wavSavePath:(NSString*)_savePath{
     
-    if (! DecodeAMRFileToWAVEFile([_amrPath cStringUsingEncoding:NSASCIIStringEncoding], [_savePath cStringUsingEncoding:NSASCIIStringEncoding]))
+    if (! DecodeAMRFileToWAVEFile([_amrPath cStringUsingEncoding:NSUTF8StringEncoding], [_savePath cStringUsingEncoding:NSUTF8StringEncoding]))
         return 0;
     
     return 1;
@@ -25,7 +25,7 @@
 
 + (int)wavToAmr:(NSString*)_wavPath amrSavePath:(NSString*)_savePath{
     
-    if (EncodeWAVEFileToAMRFile([_wavPath cStringUsingEncoding:NSASCIIStringEncoding], [_savePath cStringUsingEncoding:NSASCIIStringEncoding], 1, 16))
+    if (EncodeWAVEFileToAMRFile([_wavPath cStringUsingEncoding:NSUTF8StringEncoding], [_savePath cStringUsingEncoding:NSUTF8StringEncoding], 1, 16))
         return 0;
     
     return 1;
